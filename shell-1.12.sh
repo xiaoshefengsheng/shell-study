@@ -26,3 +26,5 @@ then
 else
     echo "$CMD terminated unsuccessfully"
 fi
+#向命令传递参数
+
