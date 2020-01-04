@@ -23,3 +23,13 @@ if [ $UID -ne 0 ]; then
 else
     echo Root user.
 fi
+
+#4.添加环境变量
+export PATH=/opt/shell:$PATH
+export LD_LIBRARY_PATH=/opt/shell:$LD_LIBRARY_PATH
+#创建一个函数用来更新变量,如下使用方法
+prepend() {[ -d "$2" ] && eval $1=\"$2':'\$$1\" && export $1;}
+prepend PATH /opt/shell
+prepend LD_LIBRARY_PATH /opt/shell
+
+
